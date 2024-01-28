@@ -4,3 +4,12 @@ jason;Task selector;Allow user to select tasks;2024-01-21;2024-01-19;Yes
 jason;this is a test to see how long the text box needs to be;Systematic characterization and documentation of tasks or subtasks and execution conditions. Task descriptions should be unambiguous, accurate, factual, comprehensible, correct and uniformly designed and written within the company so that, for example, confusion is ruled out.;2024-01-25;2024-01-20;No
 jason;build a project;build something in python;2024-01-29;2024-01-20;No
 bob;get a job;get a job as a software engineer;2024-03-29;2024-01-20;No
+nemo;finish this task;finish this task as soon as possible;2024-01-28;2024-01-27;No
+roboute;add more functionality;add more things to this project;2024-01-30;2024-01-27;No
+leman;Finish your portfolio;add OOP to gaming system;2024-02-01;2024-01-28;No
+nemo;create user database;create folders for input and output of data;2024-03-31;2024-01-28;No
+leman;Motivation;You can do it!;2024-06-13;2024-01-28;No
+roboute;I hope this works;please work;2024-07-16;2024-01-28;No
+roboute;asdasd;jlkdsflkdslfj;2024-04-01;2024-01-28;No
+bob;kys;kys;2024-08-16;2024-01-28;No
+jason;think its working;should be working now;2024-04-20;2024-01-28;No
