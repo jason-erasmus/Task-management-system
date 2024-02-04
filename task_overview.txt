@@ -1,6 +1,9 @@
-Total number over tasks: 15
-Total number over tasks: 2
-Total number over tasks: 13
-Total number of over due tasks: 3
-Percentage of incompete tasks: 86.67
-Percentage of overdue tasks: 20.00
+
+========================================
+Total number of tasks: 15
+Total number of completed tasks: 2
+Total number of incomplete tasks: 13
+Total number of of incomplete and overduedue tasks: 6
+Percentage of incompete tasks: 86.67%
+Percentage of overdue tasks: 40.00%
+========================================
