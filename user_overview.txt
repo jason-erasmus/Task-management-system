@@ -1,6 +1,6 @@
 
 ========================================
-Total users registered: 8
+Total users registered: 9
 Total number of tasks: 15
 ========================================
 
