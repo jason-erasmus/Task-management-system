@@ -1,53 +1,54 @@
 
 ========================================
 Total users registered: 9
-Total number of tasks: 15
+Total number of tasks: 16
 ========================================
 
 Total tasks assigned to Admin: 1
-Percentage of tasks assigned to Admin: 6.67%
+Percentage of tasks assigned to Admin: 6.25%
 Percentage of tasks assigned to Admin completed: 0.00%
-Percentage of tasks assigned to Admin incomplete: 100.00%
+Percentage of tasks assigned toAdmin incomplete: 100.00%
 Percentage of tasks assigned to Admin incomplete and overdue: 100.00%
 
 ========================================
 
-Total tasks assigned to Jason: 4
-Percentage of tasks assigned to Jason: 26.67%
-Percentage of tasks assigned to Jason completed: 50.00%
-Percentage of tasks assigned to Jason incomplete: 50.00%
-Percentage of tasks assigned to Jason incomplete and overdue: 50.00%
+Total tasks assigned to Jason: 5
+Percentage of tasks assigned to Jason: 31.25%
+Percentage of tasks assigned to Jason completed: 40.00%
+Percentage of tasks assigned toJason incomplete: 60.00%
+Percentage of tasks assigned to Jason incomplete and overdue: 60.00%
 
 ========================================
 
 Total tasks assigned to Bob: 2
-Percentage of tasks assigned to Bob: 13.33%
+Percentage of tasks assigned to Bob: 12.50%
 Percentage of tasks assigned to Bob completed: 0.00%
-Percentage of tasks assigned to Bob incomplete: 100.00%
+Percentage of tasks assigned toBob incomplete: 100.00%
 Percentage of tasks assigned to Bob incomplete and overdue: 0.00%
 
 ========================================
 
 Total tasks assigned to Nemo: 3
-Percentage of tasks assigned to Nemo: 20.00%
+Percentage of tasks assigned to Nemo: 18.75%
 Percentage of tasks assigned to Nemo completed: 0.00%
-Percentage of tasks assigned to Nemo incomplete: 100.00%
+Percentage of tasks assigned toNemo incomplete: 100.00%
 Percentage of tasks assigned to Nemo incomplete and overdue: 33.33%
 
 ========================================
 
 Total tasks assigned to Roboute: 3
-Percentage of tasks assigned to Roboute: 20.00%
+Percentage of tasks assigned to Roboute: 18.75%
 Percentage of tasks assigned to Roboute completed: 0.00%
-Percentage of tasks assigned to Roboute incomplete: 100.00%
+Percentage of tasks assigned toRoboute incomplete: 100.00%
 Percentage of tasks assigned to Roboute incomplete and overdue: 33.33%
 
 ========================================
 
 Total tasks assigned to Leman: 2
-Percentage of tasks assigned to Leman: 13.33%
+Percentage of tasks assigned to Leman: 12.50%
 Percentage of tasks assigned to Leman completed: 0.00%
-Percentage of tasks assigned to Leman incomplete: 100.00%
+Percentage of tasks assigned toLeman incomplete: 100.00%
 Percentage of tasks assigned to Leman incomplete and overdue: 50.00%
 
 ========================================
+====

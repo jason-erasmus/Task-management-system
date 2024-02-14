@@ -31,22 +31,22 @@ def create_task_list(task_data):
     """
     task_list = []
     for task_str in task_data:
-        current_task = {}
+        curr_task = {}
 
         # Split by semicolon and manually add each component
         task_components = task_str.split(";")
-        current_task["username"] = task_components[0]
-        current_task["title"] = task_components[1]
-        current_task["description"] = task_components[2]
-        current_task["due_date"] = datetime.strptime(
+        curr_task["username"] = task_components[0]
+        curr_task["title"] = task_components[1]
+        curr_task["description"] = task_components[2]
+        curr_task["due_date"] = datetime.strptime(
             task_components[3], DATETIME_STRING_FORMAT
         )
-        current_task["assigned_date"] = datetime.strptime(
+        curr_task["assigned_date"] = datetime.strptime(
             task_components[4], DATETIME_STRING_FORMAT
         )
-        current_task["completed"] = True if task_components[5] == "Yes" else False
+        curr_task["completed"] = True if task_components[5] == "Yes" else False
 
-        task_list.append(current_task)
+        task_list.append(curr_task)
 
     return task_list
 
@@ -143,7 +143,7 @@ def add_task():
      - the due date of the task."""
 
     while True:
-        task_username = input("Name of person assigned to task: ").lower()
+        task_username = input("Name of person assigned to task: ")
         if task_username not in username_password.keys():
             print("User does not exist. Please enter a valid username")
             continue
@@ -152,11 +152,15 @@ def add_task():
         while True:
             try:
                 task_due_date = input("Due date of task (YYYY-MM-DD): ")
-                due_date_time = datetime.strptime(task_due_date, DATETIME_STRING_FORMAT)
+                due_date_time = datetime.strptime(
+                    task_due_date, DATETIME_STRING_FORMAT
+                    )
                 break
 
             except ValueError:
-                print("Invalid datetime format. Please use the format specified")
+                print(
+                    "Invalid datetime format. Please use the format specified"
+                    )
 
         # Gets the current date.
         curr_date = date.today()
@@ -203,7 +207,7 @@ def view_all():
         )
         disp_str += f"Due Date: \t {t['due_date'].strftime(DATETIME_STRING_FORMAT)}\n"
         disp_str += f"Task Description: \n {t['description']}\n"
-        disp_str += f"Task completed: {'Yes' if t['completed'] else 'No' }\n"
+        disp_str += f"Task completed: {'Yes' if t['completed'] else 'No'}\n"
         print(disp_str)
 
 
@@ -234,7 +238,9 @@ def task_editor(user_tasks):
         if select_task >= 1 and select_task <= len(user_tasks):
             selected_task = user_tasks[select_task - 1]
             if selected_task["completed"]:
-                print("\nThis task is marked as complete and can no longer be edited.")
+                print(
+                    "\nThis task is marked as complete "
+                    + "and can no longer be edited.")
             else:
                 edit_task = input(
                     """Select from the following:\n
@@ -260,7 +266,9 @@ c  - mark as complete\n
                         )
 
                 elif edit_task == "dd":
-                    new_due_date = input("\nEnter the new due date (YYYY-MM-DD): ")
+                    new_due_date = input(
+                        "\nEnter the new due date (YYYY-MM-DD): "
+                        )
                     try:
                         due_date_time = datetime.strptime(
                             new_due_date, DATETIME_STRING_FORMAT
@@ -269,12 +277,14 @@ c  - mark as complete\n
                         print(f"\n{MENU_LINES}\nDue date updated.\n{MENU_LINES}\n")
                     except ValueError:
                         print(
-                            "Invalid datetime format. Please use the format specified."
+                            "Invalid datetime format. Please use "
+                            + "the format specified."
                         )
                 elif edit_task == "c":
                     selected_task["completed"] = True
                     print(
-                        f"\n{MENU_LINES}This task has been marked as complete.\n{MENU_LINES}\n"
+                        f"\n{MENU_LINES}This task has been "
+                        + f"marked as complete.\n{MENU_LINES}\n"
                     )
 
                 else:
@@ -318,7 +328,7 @@ def view_mine(current_user):
         )
         disp_str += f"Due Date: \t {t['due_date'].strftime(DATETIME_STRING_FORMAT)}\n"
         disp_str += f"Task Description: \n {t['description']}\n"
-        disp_str += f"Task completed: {'Yes' if t['completed'] else 'No' }\n"
+        disp_str += f"Task completed: {'Yes' if t['completed'] else 'No'}\n"
         print(disp_str)
 
         j += 1  # Increases task index display
@@ -332,10 +342,10 @@ def task_report():
     data is then printed when admin calls "generate reports"
     """
     if not os.path.exists("task_overview.txt"):
-        with open("task_overview.txt", "w+") as default_file:
+        with open("task_overview.txt", "w+") as overview_file:
             pass
 
-    with open("task_overview.txt", "w+") as overview_file:
+    with open("task_overview.txt", "r+") as overview_file:
         overview_file.write(
             f"\n{MENU_LINES}\nTotal number of tasks: {len(task_list)}\n"
         )
@@ -404,7 +414,9 @@ def user_report():
             username = task["username"]
             task_count[username] = task_count.get(username, 0) + 1
 
-        total_num_users = f"\n{MENU_LINES}\nTotal users registered: {total_users}\n"
+        total_num_users = (
+            f"\n{MENU_LINES}\nTotal users " + f"registered: {total_users}\n"
+        )
 
         total_tasks = f"Total number of tasks: {len(task_list)}\n{MENU_LINES}\n"
 
@@ -432,18 +444,28 @@ def user_report():
 
             task_per_user = f"\nTotal tasks assigned to {username.title()}: {count}\n"
 
-            task_per_user_per = "Percentage of tasks assigned to "
-            +f"{username.title()}: {count/len(task_list)*100:.2f}%\n"
+            task_per_user_per = (
+                "Percentage of tasks assigned to "
+                + f"{username.title()}: {count/len(task_list)*100:.2f}%\n"
+            )
 
-            task_per_user_complete = "Percentage of tasks assigned to "
-            +f"{username.title()} completed: {completed_tasks/count*100:.2f}%\n"
+            task_per_user_complete = (
+                "Percentage of tasks assigned to "
+                + f"{username.title()} completed: "
+                + f"{completed_tasks/count*100:.2f}%\n"
+            )
 
-            task_per_user_incomplete = "Percentage of tasks assigned to "
-            +f"{username.title()} incomplete: {incomplete_tasks/count*100:.2f}%\n"
+            task_per_user_incomplete = (
+                "Percentage of tasks assigned to"
+                + f"{username.title()} incomplete: "
+                + f"{incomplete_tasks/count*100:.2f}%\n"
+            )
 
-            incomplete_overdue = "Percentage of tasks assigned to "
-            +f"{username.title()} incomplete and overdue: "
-            +f"{incomplete_overdue/count*100:.2f}%\n\n{MENU_LINES}\n"
+            incomplete_overdue = (
+                "Percentage of tasks assigned to "
+                + f"{username.title()} incomplete and overdue: "
+                + f"{incomplete_overdue/count*100:.2f}%\n\n{MENU_LINES}\n"
+            )
 
             user_overview_file.write(task_per_user)
             user_overview_file.write(task_per_user_per)
@@ -474,8 +496,8 @@ def user_stats():
 
 def task_stats():
     """
-    The function "task_stats" reads a file called "tasks.txt" and returns the total number of tasks
-    listed in the file.
+    The function "task_stats" reads a file called "tasks.txt" and
+    returns the total number of tasks listed in the file.
     :return: the total number of tasks in the "tasks.txt" file.
     """
 
@@ -525,8 +547,9 @@ username_password = create_user_data_dict(user_data)
 
 def log_in():
     """
-    The function `log_in()` prompts the user to enter a username and password, checks if the user
-    exists and if the password is correct, and grants admin rights if the user is the admin.
+    The function `log_in()` prompts the user to enter a username and
+    password, checks if the user exists and if the password is correct,
+    and grants admin rights if the user is the admin.
     """
     clear_terminal()
     logged_in = False
@@ -622,8 +645,8 @@ uo - Current state of tasks assigned to the team\n
             else:
                 print("Please choose a valid function")
         elif menu == "ds" and current_user == "admin":
-            """If the user is an admin they can display statistics about number of users
-            and tasks."""
+            """If the user is an admin they can display statistics
+            about number of users and tasks."""
 
             print(MENU_LINES)
             print(f"Number of users: \t\t {user_stats()}")

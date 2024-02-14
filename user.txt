@@ -7,3 +7,4 @@ leman;Fenris
 dante;fortheblood
 thelion;forcaliban
 Luke;luke123
+Roger;rogerroger

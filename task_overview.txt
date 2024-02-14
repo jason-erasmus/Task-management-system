@@ -3,7 +3,7 @@
 Total number of tasks: 16
 Total number of completed tasks: 2
 Total number of incomplete tasks: 14
-Total number of of incomplete and overduedue tasks: 5
+Total number of of incomplete and overduedue tasks: 7
 Percentage of incompete tasks: 87.50%
-Percentage of overdue tasks: 31.25%
+Percentage of overdue tasks: 43.75%
 ========================================
